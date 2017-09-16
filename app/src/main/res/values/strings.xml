@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidArchitectureSample</string>
+
+    <string name="shared_image">sharedimage</string>
+</resources>

@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.sunil.androidarchitecturesample"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude module: 'jsr305'
+    })
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    //support lib
+    compile rootProject.ext.supportLibAppCompat
+    compile rootProject.ext.supportLibDesign
+
+    compile rootProject.ext.archRuntime
+    compile rootProject.ext.archExtension
+    annotationProcessor rootProject.ext.archCompiler
+
+    compile rootProject.ext.roomRuntime
+    annotationProcessor rootProject.ext.roomCompiler
+
+    compile rootProject.ext.okhttp
+    compile rootProject.ext.retrofit
+    compile rootProject.ext.gsonConverter
+
+    //dagger
+    annotationProcessor rootProject.ext.daggerCompiler
+    compile rootProject.ext.dagger
+    compile rootProject.ext.daggerAndroid
+    compile rootProject.ext.daggerAndroidSupport
+    annotationProcessor rootProject.ext.daggerAndroidProcessor
+
+    //ui
+    compile rootProject.ext.picasso
+}
