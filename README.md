@@ -1,5 +1,5 @@
 # AndroidArchitectureSample
-Android Architecture component sample
+Android Architecture component sample, to run this project add your api key in Constant file.
 ## Using library
 
 - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata.html)
